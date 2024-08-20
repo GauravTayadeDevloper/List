@@ -16,7 +16,7 @@ const OwnerRepos = () => {
                 const response = await fetch(`https://api.github.com/repositories?per_page=30&page=1`);
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
-                setRepos(data.filter(repo => repo.owner.login === owner)); // Filter repos by owner
+                setRepos(data.filter(repo => repo.owner.login === owner));
             } catch (error) {
                 console.error('Fetching error: ', error);
             }
